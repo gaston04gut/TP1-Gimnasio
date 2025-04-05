@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clases</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/clases.css" />
+  </head>
+  <body>
+    <header>
+      <div id="header"></div>
+    </header>
+
+    <section id="clases-destacadas">
+      <h1>Clases Destacadas</h1>
+
+      <input type="radio" name="categoria" id="todos" checked />
+      <input type="radio" name="categoria" id="yoga" />
+      <input type="radio" name="categoria" id="spinning" />
+      <input type="radio" name="categoria" id="boxing" />
+
+      <div class="filtros">
+        <label for="todos">Todos</label>
+        <label for="yoga">Yoga</label>
+        <label for="spinning">Spinning</label>
+        <label for="boxing">Boxing</label>
+      </div>
+
+      <div class="clases">
+        <div class="clase yoga">
+          <h3>Clase de Yoga</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
+            molestias beatae. Voluptatem dolorem quod qui doloribus similique
+            mollitia laboriosam corrupti ipsum tenetur! Deserunt iste quo earum
+            fuga, quam dolores ea!
+          </p>
+        </div>
+        <div class="clase spinning">
+          <h3>Clase de Spinning</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+            culpa. Nam architecto unde numquam mollitia hic voluptatibus
+            corrupti odit quaerat sunt, magnam laboriosam fugiat earum eos
+            aliquam dolor, provident voluptas!
+          </p>
+        </div>
+        <div class="clase boxing">
+          <h3>Clase de Boxing</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            laborum et aspernatur commodi dolor modi perspiciatis eum itaque rem
+            odit natus, error incidunt. Quam veniam dicta recusandae, nulla
+            vitae aspernatur?
+          </p>
+        </div>
+        <div class="clase musculacion">
+          <h3>Clase de Musculación</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+            molestiae nesciunt sequi perspiciatis voluptas repellat placeat
+            sint, quia, asperiores obcaecati ex temporibus dolores earum alias
+            ea ullam, vitae deserunt debitis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria de Clases</h2>
+      <div class="masonry">
+        <img src="/TP1-Gimnasio/img/gym7.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym2.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym4.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym5.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym1.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym11.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym3.jpg" alt="" />
+        <img src="/TP1-Gimnasio/img/gym8.jpg" alt="" />
+      </div>
+    </section>
+
+    <section id="tarjetas-clases">
+      <h2>Informacion de Clases</h2>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <img src="../img/yoga.png" alt="" />
+          <div class="overlay">
+            <h3>Yoga</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <img src="../img/spinning.png" alt="" />
+          <div class="overlay">
+            <h3>Spinning</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <img src="../img/boxeo.png" alt="" />
+          <div class="overlay">
+            <h3>Boxing</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="horarios">
+      <h2>Horarios Semanales</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Clase</th>
+            <th>Horario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lunes</td>
+            <td>Yoga</td>
+            <td>10:00 - 11:00</td>
+          </tr>
+          <tr>
+            <td>Martes</td>
+            <td>Spinning</td>
+            <td>18:00 - 19:00</td>
+          </tr>
+          <tr>
+            <td>Miércoles</td>
+            <td>Boxing</td>
+            <td>20:00 - 21:00</td>
+          </tr>
+          <tr>
+            <td>Jueves</td>
+            <td>Yoga</td>
+            <td>09:00 - 10:00</td>
+          </tr>
+          <tr>
+            <td>Viernes</td>
+            <td>Spinning</td>
+            <td>17:00 - 18:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <footer>
+      <div id="footer"></div>
+    </footer>
+    <script>
+      async function loadHTML(elementId, filePath) {
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
+          const data = await response.text();
+          document.getElementById(elementId).innerHTML = data;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      // Cargar header y footer
+      document.addEventListener("DOMContentLoaded", () => {
+        loadHTML("header", "../includes/header.html");
+        loadHTML("footer", "../includes/footer.html");
+      });
+    </script>
+  </body>
+</html>

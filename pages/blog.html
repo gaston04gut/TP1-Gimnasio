@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/blog.css" />
+  </head>
+  <body>
+    <header>
+      <div id="header"></div>
+    </header>
+
+    <main id="blog">
+      <h1>Blog de Fitness</h1>
+      <div class="filtros">
+        <input type="checkbox" id="fitness" />
+        <label for="fitness">Fitness</label>
+        <input type="checkbox" id="nutricion" />
+        <label for="nutricion">Nutrición</label>
+        <input type="checkbox" id="yoga" />
+        <label for="yoga">Yoga</label>
+      </div>
+
+      <section class="articulos">
+        <article class="articulo fitness">
+          <h2>Entrenamiento Funcional</h2>
+          <p class="tags">#Fitness #Entrenamiento</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+        <article class="articulo nutricion">
+          <h2>Nutrición Deportiva</h2>
+          <p class="tags">#Nutrición #Salud</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+        <article class="articulo yoga">
+          <h2>Yoga para Principiantes</h2>
+          <p class="tags">#Yoga #Bienestar</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div id="footer"></div>
+    </footer>
+    <script>
+      // Función para cargar contenido HTML en un elemento
+      async function loadHTML(elementId, filePath) {
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
+          const data = await response.text();
+          document.getElementById(elementId).innerHTML = data;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      // Cargar header y footer
+      document.addEventListener("DOMContentLoaded", () => {
+        loadHTML("header", "../includes/header.html");
+        loadHTML("footer", "../includes/footer.html");
+      });
+    </script>
+  </body>
+</html>

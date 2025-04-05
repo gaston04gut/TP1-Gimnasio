@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>entrenadores</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/entrenadores.css" />
+  </head>
+  <body>
+    <header>
+      <div id="header"></div>
+    </header>
+    <section id="entrenadores">
+      <h2>Nuestros Entrenadores</h2>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="../img/entrenador1.png" alt="" />
+              <h3>Gustavo</h3>
+            </div>
+            <div class="tarjeta-back">
+              <h3>Gustavo</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat porro, cumque veritatis
+              </p>
+              <div class="habilidades">
+                <h3>Habilidades</h3>
+                <div class="habilidad">
+                  <span>Fuerza</span>
+                  <div class="barra">
+                    <div class="progreso" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="habilidad">
+                  <span>Flexibilidad</span>
+                  <div class="barra">
+                    <div class="progreso" style="width: 65%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="rating">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="../img/entrenador2.png" alt="" />
+              <h3>Javier</h3>
+            </div>
+            <div class="tarjeta-back">
+              <h3>Javier</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat porro, cumque veritatis
+              </p>
+              <div class="habilidades">
+                <h3>Habilidades</h3>
+                <div class="habilidad">
+                  <span>Fuerza</span>
+                  <div class="barra">
+                    <div class="progreso" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="habilidad">
+                  <span>Flexibilidad</span>
+                  <div class="barra">
+                    <div class="progreso" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="rating">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <div class="tarjeta-inner">
+            <div class="tarjeta-front">
+              <img src="../img/entrenador3.png" alt="" />
+              <h3>Mauro</h3>
+            </div>
+            <div class="tarjeta-back">
+              <h3>Mauro</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat porro, cumque veritatis
+              </p>
+              <div class="habilidades">
+                <h3>Habilidades</h3>
+                <div class="habilidad">
+                  <span>Fuerza</span>
+                  <div class="barra">
+                    <div class="progreso" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="habilidad">
+                  <span>Flexibilidad</span>
+                  <div class="barra">
+                    <div class="progreso" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="rating">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div id="footer"></div>
+    </footer>
+    <script>
+      // Función para cargar contenido HTML en un elemento
+      async function loadHTML(elementId, filePath) {
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
+          const data = await response.text();
+          document.getElementById(elementId).innerHTML = data;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      // Cargar header y footer
+      document.addEventListener("DOMContentLoaded", () => {
+        loadHTML("header", "../includes/header.html");
+        loadHTML("footer", "../includes/footer.html");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+#entrenadores {
+  margin-top: 80px;
+  padding: 20px;
+  text-align: center;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tarjeta {
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+}
+.tarjeta-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.tarjeta:hover .tarjeta-inner {
+  transform: rotateY(180deg);
+}
+.tarjeta-front,
+.tarjeta-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-front {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tarjeta-front img {
+  width: 100%;
+  height: 90%;
+    object-fit: cover;
+}
+.tarjeta-back{
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.habilidades{
+    margin-top: 20px;
+    text-align: left;
+}
+.habilidad{
+    margin-bottom: 10px;
+}
+
+.habilidad span{
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+.barra{
+    width: 100%;
+    height: 10px;
+    background-color: rgb(201, 201, 201);
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+.progreso{
+    height: 100%;
+    background-color: blueviolet;
+    transition: width 1s ease-in-out;
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+    flex-direction: row-reverse;
+}
+.rating span:hover , .rating span:hover ~ span{
+    color: gold;
+}
+.rating span{
+    transition: color 0.3s ease
+}

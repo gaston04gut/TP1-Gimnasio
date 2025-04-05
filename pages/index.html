@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="header"></div>
+    </header>
+
+    <section id="hero">
+      <div class="video-container">
+        <video
+          muted
+          loop
+          autoplay
+          src="/TP1-Gimnasio/video/gymvideo.mp4"
+        ></video>
+
+        <div class="text">
+          <h1>SUMATE CON LOS MEJORES</h1>
+          <h1>TU PUEDES HACERLO</h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="clases-destacadas">
+      <div class="container-card">
+        <h2>Nuestras Clases Destacadas</h2>
+        <div class="card">
+          <div class="card-content">
+            <h3>Yoga</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+              voluptates magnam error consectetur eos amet voluptas, dignissimos
+              quia, incidunt, temporibus quibusdam fugiat ducimus! Nisi
+              obcaecati necessitatibus, suscipit alias fugiat repellat!
+            </p>
+            <button>+ info</button>
+          </div>
+
+          <div class="card-content">
+            <h3>Spinning</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+              voluptates magnam error consectetur eos amet voluptas, dignissimos
+              quia, incidunt, temporibus quibusdam fugiat ducimus! Nisi
+              obcaecati necessitatibus, suscipit alias fugiat repellat!
+            </p>
+            <button>+ info</button>
+          </div>
+
+          <div class="card-content">
+            <h3>Boxeo</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+              voluptates magnam error consectetur eos amet voluptas, dignissimos
+              quia, incidunt, temporibus quibusdam fugiat ducimus! Nisi
+              obcaecati necessitatibus, suscipit alias fugiat repellat!
+            </p>
+            <button>+ info</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contador">
+      <div class="contador-contenido">
+        <span class="numero-animado" data-valor="500">+</span
+        ><span> socios satisfechos</span>
+      </div>
+    </section>
+
+    <section id="testimonios">
+      <h3>Sus testimonios</h3>
+      <div class="carrusel">
+        <input type="radio" name="slide" id="slide1" checked />
+        <input type="radio" name="slide" id="slide2" />
+        <input type="radio" name="slide" id="slide3" />
+
+        <div class="slides">
+          <div class="carrusel-content">
+            <h4>Persona1</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
+              doloribus laudantium eaque perferendis molestias sequi, quod
+              cumque. Hic nisi ullam veritatis officia, mayores nostrum possimus
+              maxime repellat temporibus modi quia.
+            </p>
+          </div>
+          <div class="carrusel-content">
+            <h4>Persona2</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
+              doloribus laudantium eaque perferendis molestias sequi, quod
+              cumque. Hic nisi ullam veritatis officia, mayores nostrum possimus
+              maxime repellat temporibus modi quia.
+            </p>
+          </div>
+          <div class="carrusel-content">
+            <h4>Persona3</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
+              doloribus laudantium eaque perferendis molestias sequi, quod
+              cumque. Hic nisi ullam veritatis officia, mayores nostrum possimus
+              maxime repellat temporibus modi quia.
+            </p>
+          </div>
+        </div>
+        <div class="controles">
+          <label for="slide1"></label>
+          <label for="slide2"></label>
+          <label for="slide3"></label>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form id="form-contacto" action="#modal-confirmacion" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Tu correo" required />
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
+        </div>
+        <button type="submit" id="btn-enviar">
+          Enviar
+          <span class="spinner"></span>
+        </button>
+      </form>
+
+      <div id="modal-confirmacion" class="modal">
+        <div class="modal-content">
+          <h3>¡Mensaje Enviado!</h3>
+          <p>Gracias por contactarnos. Te responderemos pronto.</p>
+          <a href="#contacto" class="cerrar-modal">Cerrar</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div id="footer"></div>
+    </footer>
+    <script>
+      // Función para cargar contenido HTML en un elemento
+      async function loadHTML(elementId, filePath) {
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
+          const data = await response.text();
+          document.getElementById(elementId).innerHTML = data;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      // Cargar header y footer
+      document.addEventListener("DOMContentLoaded", () => {
+        loadHTML("header", "../includes/header.html");
+        loadHTML("footer", "../includes/footer.html");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+#clases-destacadas {
+  margin-top: 75px;
+  padding: 20px;
+}
+
+.filtros input {
+  display: none;
+}
+
+.filtros {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filtros label {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.filtros label:hover {
+  background-color: #bbb; /* Cambia el color al pasar el mouse */
+}
+
+/* Cambiar estilo del label cuando el input está seleccionado */
+#todos:checked ~ .filtros label[for="todos"],
+#yoga:checked ~ .filtros label[for="yoga"],
+#spinning:checked ~ .filtros label[for="spinning"],
+#boxing:checked ~ .filtros label[for="boxing"] {
+  background-color: blueviolet;
+  color: white;
+}
+
+.clases {
+  display: grid;
+  gap: 20px;
+  padding: 10px 30px;
+}
+.clases .clase p {
+  margin: 0 !important;
+  padding: 9px !important;
+  font-size: 18px;
+  text-align: center;
+  font-style: italic;
+}
+.clases .clase {
+  display: none;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: black;
+}
+
+.clases .clase:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#todos:checked ~ .clases .clase {
+  display: block;
+}
+
+#yoga:checked ~ .clases .yoga {
+  display: block;
+}
+
+#spinning:checked ~ .clases .spinning {
+  display: block;
+}
+
+#boxing:checked ~ .clases .boxing {
+  display: block;
+}
+
+#galeria {
+  padding: 20px;
+}
+#galeria h2 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.masonry img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.masonry img:hover {
+  transform: scale(1.05);
+}
+
+#tarjetas-clases {
+  margin-top: 70px;
+  padding: 20px;
+  text-align: center;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tarjeta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover img {
+  transform: scale(1.1);
+}
+.tarjeta .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tarjeta:hover .overlay {
+  opacity: 1;
+}
+
+#horarios {
+  margin-top: 50px;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20 50px;
+}
+thead {
+  background-color: #333;
+  color: white;
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+tbody tr:nth-child(even) {
+  background-color: #b9b9b9;
+}
+tbody tr:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+@media (max-width: 720px) {
+  table,
+  thead,
+  th,
+  td{
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 10px;
+  }
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td:before{
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

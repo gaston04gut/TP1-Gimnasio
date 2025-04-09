@@ -6,38 +6,187 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/blog.css" />
   </head>
-  <body>
+  <body data-tema="claro">
     <header>
       <div id="header"></div>
     </header>
 
     <main id="blog">
       <h1>Blog de Fitness</h1>
+      <input type="radio" name="filtro" id="todos" checked />
+      <input type="radio" name="filtro" id="fitness" />
+      <input type="radio" name="filtro" id="nutricion" />
+      <input type="radio" name="filtro" id="yoga" />
+
       <div class="filtros">
-        <input type="checkbox" id="fitness" />
+        <label for="todos">Todos</label>
         <label for="fitness">Fitness</label>
-        <input type="checkbox" id="nutricion" />
         <label for="nutricion">Nutrición</label>
-        <input type="checkbox" id="yoga" />
         <label for="yoga">Yoga</label>
       </div>
-
       <section class="articulos">
+        <!-- Artículos de Fitness -->
         <article class="articulo fitness">
           <h2>Entrenamiento Funcional</h2>
           <p class="tags">#Fitness #Entrenamiento</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </article>
+        <article class="articulo fitness">
+          <h2>Rutinas de Cardio</h2>
+          <p class="tags">#Fitness #Cardio</p>
+          <p>
+            Descubre las mejores rutinas para mejorar tu resistencia
+            cardiovascular.
+          </p>
+        </article>
+        <article class="articulo fitness">
+          <h2>Entrenamiento de Fuerza</h2>
+          <p class="tags">#Fitness #Fuerza</p>
+          <p>
+            Aprende cómo desarrollar fuerza con ejercicios básicos y avanzados.
+          </p>
+        </article>
+        <article class="articulo fitness">
+          <h2>HIIT: Entrenamiento de Alta Intensidad</h2>
+          <p class="tags">#Fitness #HIIT</p>
+          <p>
+            Quema calorías rápidamente con entrenamientos de alta intensidad.
+          </p>
+        </article>
+        <article class="articulo fitness">
+          <h2>Cómo Mejorar tu Postura</h2>
+          <p class="tags">#Fitness #Postura</p>
+          <p>Ejercicios para corregir y mantener una postura saludable.</p>
+        </article>
+
+        <!-- Artículos de Nutrición -->
         <article class="articulo nutricion">
           <h2>Nutrición Deportiva</h2>
           <p class="tags">#Nutrición #Salud</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>
+            Conoce los alimentos ideales para mejorar tu rendimiento físico.
+          </p>
         </article>
+        <article class="articulo nutricion">
+          <h2>Dietas Balanceadas</h2>
+          <p class="tags">#Nutrición #Dieta</p>
+          <p>
+            Descubre cómo mantener una dieta equilibrada para alcanzar tus
+            objetivos.
+          </p>
+        </article>
+        <article class="articulo nutricion">
+          <h2>Suplementos Deportivos</h2>
+          <p class="tags">#Nutrición #Suplementos</p>
+          <p>
+            ¿Son necesarios los suplementos? Aprende cuándo y cómo utilizarlos.
+          </p>
+        </article>
+        <article class="articulo nutricion">
+          <h2>Alimentos para Ganar Masa Muscular</h2>
+          <p class="tags">#Nutrición #MasaMuscular</p>
+          <p>
+            Descubre qué alimentos te ayudarán a ganar músculo de forma
+            saludable.
+          </p>
+        </article>
+        <article class="articulo nutricion">
+          <h2>Hidratación y Rendimiento</h2>
+          <p class="tags">#Nutrición #Hidratación</p>
+          <p>La importancia de mantenerse hidratado durante el ejercicio.</p>
+        </article>
+
+        <!-- Artículos de Yoga -->
         <article class="articulo yoga">
           <h2>Yoga para Principiantes</h2>
           <p class="tags">#Yoga #Bienestar</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Inicia tu camino en el yoga con estas posturas básicas.</p>
         </article>
+        <article class="articulo yoga">
+          <h2>Beneficios del Yoga</h2>
+          <p class="tags">#Yoga #Salud</p>
+          <p>Descubre cómo el yoga puede mejorar tu salud física y mental.</p>
+        </article>
+        <article class="articulo yoga">
+          <h2>Yoga Avanzado</h2>
+          <p class="tags">#Yoga #Avanzado</p>
+          <p>
+            Explora posturas avanzadas y técnicas de respiración para expertos.
+          </p>
+        </article>
+        <article class="articulo yoga">
+          <h2>Yoga para Reducir el Estrés</h2>
+          <p class="tags">#Yoga #Estrés</p>
+          <p>
+            Posturas y técnicas de respiración para relajarte y reducir el
+            estrés.
+          </p>
+        </article>
+        <article class="articulo yoga">
+          <h2>Yoga y Flexibilidad</h2>
+          <p class="tags">#Yoga #Flexibilidad</p>
+          <p>Mejora tu flexibilidad con estas posturas de yoga.</p>
+        </article>
+
+        <!-- Artículos de Bienestar -->
+        <article class="articulo bienestar">
+          <h2>Mindfulness y Meditación</h2>
+          <p class="tags">#Bienestar #Meditación</p>
+          <p>
+            Aprende a reducir el estrés con técnicas de mindfulness y
+            meditación.
+          </p>
+        </article>
+        <article class="articulo bienestar">
+          <h2>Hábitos Saludables</h2>
+          <p class="tags">#Bienestar #Hábitos</p>
+          <p>Descubre cómo incorporar hábitos saludables en tu día a día.</p>
+        </article>
+        <article class="articulo bienestar">
+          <h2>Descanso y Recuperación</h2>
+          <p class="tags">#Bienestar #Descanso</p>
+          <p>
+            La importancia del descanso para mejorar tu rendimiento físico y
+            mental.
+          </p>
+        </article>
+        <article class="articulo bienestar">
+          <h2>Cómo Dormir Mejor</h2>
+          <p class="tags">#Bienestar #Sueño</p>
+          <p>Consejos para mejorar la calidad de tu sueño y descansar mejor.</p>
+        </article>
+        <article class="articulo bienestar">
+          <h2>Gestión del Tiempo</h2>
+          <p class="tags">#Bienestar #Productividad</p>
+          <p>
+            Aprende a organizar tu tiempo para equilibrar trabajo y bienestar.
+          </p>
+        </article>
+      </section>
+
+      <section id="comentarios">
+        <h2>Comentarios</h2>
+        <div class="comentario">
+          <div class="avatar"></div>
+          <div class="contenido">
+            <h3>Juan Pérez</h3>
+            <p>Excelente artículo, muy informativo.</p>
+          </div>
+        </div>
+        <div class="comentario">
+          <div class="avatar"></div>
+          <div class="contenido">
+            <h3>María López</h3>
+            <p>Me encantó la sección de yoga, ¡gracias!</p>
+          </div>
+        </div>
+        <div class="comentario">
+          <div class="avatar"></div>
+          <div class="contenido">
+            <h3>Jose</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -45,23 +194,26 @@
       <div id="footer"></div>
     </footer>
     <script>
-      // Función para cargar contenido HTML en un elemento
-      async function loadHTML(elementId, filePath) {
-        try {
-          const response = await fetch(filePath);
-          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
-          const data = await response.text();
-          document.getElementById(elementId).innerHTML = data;
-        } catch (error) {
-          console.error(error);
-        }
-      }
+           document.addEventListener("DOMContentLoaded", () => {
+        const articles = document.querySelectorAll(".articulo");
 
-      // Cargar header y footer
-      document.addEventListener("DOMContentLoaded", () => {
-        loadHTML("header", "includes/header.html");
-        loadHTML("footer", "includes/footer.html");
+        const revealOnScroll = () => {
+          const viewportHeight = window.innerHeight;
+
+          articles.forEach((article) => {
+            const articleTop = article.getBoundingClientRect().top;
+
+            if (articleTop < viewportHeight - 100) {
+              article.classList.add("reveal");
+            }
+          });
+        };
+
+        // Ejecutar la función al cargar la página y al hacer scroll
+        revealOnScroll();
+        window.addEventListener("scroll", revealOnScroll);
       });
     </script>
+    <script src="js/script.js"></SCript>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/clases.css" />
   </head>
-  <body>
+  <body data-tema="claro">
     <header>
       <div id="header"></div>
     </header>
@@ -26,8 +26,8 @@
         <label for="boxing">Boxing</label>
       </div>
 
-      <div class="clases">
-        <div class="clase yoga">
+      <div class="clases" id="clases">
+        <div class="clase yoga" id="yoga">
           <h3>Clase de Yoga</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
@@ -35,8 +35,25 @@
             mollitia laboriosam corrupti ipsum tenetur! Deserunt iste quo earum
             fuga, quam dolores ea!
           </p>
+          <div class="tarjetas-clases">
+            <div class="tarjeta">
+              <img src="img/yoga.png" alt="" />
+              <div class="overlay">
+                <h3>Yoga</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="masonry">
+            <img src="img/yoga4.png" alt="" />
+            <img src="img/yoga5.png" alt="" />
+            <img src="img/yoga1.png" alt="" />
+            <img src="img/yoga3.png" alt="" />
+            <img src="img/yoga2.png" alt="" />
+          </div>
         </div>
-        <div class="clase spinning">
+
+        <div class="clase spinning" id="spinning">
           <h3>Clase de Spinning</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
@@ -44,8 +61,24 @@
             corrupti odit quaerat sunt, magnam laboriosam fugiat earum eos
             aliquam dolor, provident voluptas!
           </p>
+          <div class="tarjetas-clases">
+            <div class="tarjeta">
+              <img src="img/spinning.png" alt="" />
+              <div class="overlay">
+                <h3>Spinning</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="masonry">
+            <img src="img/spinning4.png" alt="" />
+            <img src="img/spinning1.png" alt="" />
+            <img src="img/spinning3.png" alt="" />
+            <img src="img/spinning5.png" alt="" />
+            <img src="img/spinning2.png" alt="" />
+          </div>
         </div>
-        <div class="clase boxing">
+        <div class="clase boxing" id="boxing">
           <h3>Clase de Boxing</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
@@ -53,15 +86,22 @@
             odit natus, error incidunt. Quam veniam dicta recusandae, nulla
             vitae aspernatur?
           </p>
-        </div>
-        <div class="clase musculacion">
-          <h3>Clase de Musculación</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            molestiae nesciunt sequi perspiciatis voluptas repellat placeat
-            sint, quia, asperiores obcaecati ex temporibus dolores earum alias
-            ea ullam, vitae deserunt debitis.
-          </p>
+          <div class="tarjetas-clases">
+            <div class="tarjeta">
+              <img src="img/boxeo.png" alt="" />
+              <div class="overlay">
+                <h3>Boxing</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="masonry">
+            <img src="img/boxeo1.png" alt="" />
+            <img src="img/boxeo2.png" alt="" />
+            <img src="img/boxeo3.png" alt="" />
+            <img src="img/boxeo4.png" alt="" />
+            <img src="img/boxeo5.png" alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -77,33 +117,6 @@
         <img src="img/gym11.jpg" alt="" />
         <img src="img/gym3.jpg" alt="" />
         <img src="img/gym8.jpg" alt="" />
-      </div>
-    </section>
-
-    <section id="tarjetas-clases">
-      <h2>Informacion de Clases</h2>
-      <div class="tarjetas">
-        <div class="tarjeta">
-          <img src="img/yoga.png" alt="" />
-          <div class="overlay">
-            <h3>Yoga</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </div>
-        <div class="tarjeta">
-          <img src="img/spinning.png" alt="" />
-          <div class="overlay">
-            <h3>Spinning</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </div>
-        <div class="tarjeta">
-          <img src="img/boxeo.png" alt="" />
-          <div class="overlay">
-            <h3>Boxing</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -149,23 +162,6 @@
     <footer>
       <div id="footer"></div>
     </footer>
-    <script>
-      async function loadHTML(elementId, filePath) {
-        try {
-          const response = await fetch(filePath);
-          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
-          const data = await response.text();
-          document.getElementById(elementId).innerHTML = data;
-        } catch (error) {
-          console.error(error);
-        }
-      }
-
-      // Cargar header y footer
-      document.addEventListener("DOMContentLoaded", () => {
-        loadHTML("header", "includes/header.html");
-        loadHTML("footer", "includes/footer.html");
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,68 +1,163 @@
-#blog{
-    padding: 20px;
-    max-width: 1200px;
-    margin: 65px auto;
-
+#blog {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 65px auto;
 }
-.articulos{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.articulo{
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.articulo:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.articulo h2{
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-.articulo .tags{
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 10px;
-    
+.articulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.filtros{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.articulo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.articulo h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.articulo .tags {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-.filtros input{
-    display: none;
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.filtros label{
-    padding: 10px 20px;
-    background: #ddd;
-    border-radius: 5px;
-    cursor: pointer;
+/* Estilo base para los inputs radio */
+.filtros input[type="radio"] {
+  display: none; /* Oculta el input radio original */
 }
 
-.filtros input:checked + label{
-    background: blueviolet;
-    color: white;
+/* Estilo para las etiquetas de los inputs radio */
+.filtros label {
+  padding: 10px 20px;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  border: 2px solid var(--color-borde);
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/*.articulos .articulo{
+/* Estilo cuando el input radio está seleccionado */
+.filtros input[type="radio"]:checked + label {
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+  border-color: var(--color-primario);
 }
-*/
-#fitness:checked ~ .articulos .fitness,
-#nutricion:checked ~ .articulos .nutricion,
+
+.articulo {
+  background: rgb(230, 230, 230);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  display: none;
+}
+
+.articulo.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.articulo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.articulo h2 {
+  font-size: 1.5em;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.articulo .tags {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.articulo p {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+#todos:checked ~ .articulos .articulo {
+  display: block;
+}
+
+#fitness:checked ~ .articulos .articulo {
+  display: none;
+}
+#fitness:checked ~ .articulos .fitness {
+  display: block;
+}
+
+#nutricion:checked ~ .articulos .articulo {
+  display: none;
+}
+#nutricion:checked ~ .articulos .nutricion {
+  display: block;
+}
+
+#yoga:checked ~ .articulos .articulo {
+  display: none;
+}
 #yoga:checked ~ .articulos .yoga {
-    display: block;
+  display: block;
+}
+
+
+#comentarios{
+  margin-top: 40px;
+}
+
+.comentario{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.avatar{
+  width: 50px;
+  height: 50px;
+  background-color: blueviolet;
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar::after{
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.contenido h3{
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.contenido p{
+  margin: 5px 9px;
+  font-size: 0.9em;
+  color: #555;
 }

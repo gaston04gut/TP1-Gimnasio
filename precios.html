@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/precios.css" />
   </head>
-  <body>
+  <body data-tema="claro">
     <header>
       <div id="header"></div>
     </header>
@@ -18,17 +18,19 @@
         <label for="mensual">Mensual</label>
         <input type="radio" id="anual" name="plan" />
         <label for="anual">Anual</label>
-        
+
         <div class="tabla-precios">
           <div class="plan">
             <h3>basico</h3>
             <p class="precio mensual">$20.000</p>
-            <p class="precio anual" style="display:none">$200.000</p>
+            <p class="precio anual" style="display: none">$200.000</p>
             <ul>
               <li>Acceso limitado</li>
               <li class="tooltip">
                 2 clases por Semana
-                <span class="tooltip-text">Incluye Acceso a clases grupales</span>
+                <span class="tooltip-text"
+                  >Incluye Acceso a clases grupales</span
+                >
               </li>
             </ul>
             <button>Elegir Plan</button>
@@ -36,12 +38,14 @@
           <div class="plan destacado">
             <h3>Premium</h3>
             <p class="precio mensual">$50.000</p>
-            <p class="precio anual" style="display:none">$500.000</p>
+            <p class="precio anual" style="display: none">$500.000</p>
             <ul>
               <li>Acceso Ilimitado</li>
               <li class="tooltip">
                 Clases personalizadas
-                <span class="tooltip-text">Entrenamiento 1 a 1 con un entrenador</span>
+                <span class="tooltip-text"
+                  >Entrenamiento 1 a 1 con un entrenador</span
+                >
               </li>
             </ul>
             <button>Elegir Plan</button>
@@ -49,12 +53,14 @@
           <div class="plan">
             <h3>Avanzado</h3>
             <p class="precio mensual">$35.000</p>
-            <p class="precio anual" style="display:none">$350.000</p>
+            <p class="precio anual" style="display: none">$350.000</p>
             <ul>
               <li>Acceso A todas las areas</li>
               <li class="tooltip">
                 5 clases por Semana
-                <span class="tooltip-text">Incluye Acceso a clases grupales</span>
+                <span class="tooltip-text"
+                  >Incluye Acceso a clases grupales</span
+                >
               </li>
             </ul>
             <button>Elegir Plan</button>
@@ -66,24 +72,6 @@
     <footer>
       <div id="footer"></div>
     </footer>
-    <script>
-      // Función para cargar contenido HTML en un elemento
-      async function loadHTML(elementId, filePath) {
-        try {
-          const response = await fetch(filePath);
-          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
-          const data = await response.text();
-          document.getElementById(elementId).innerHTML = data;
-        } catch (error) {
-          console.error(error);
-        }
-      }
-
-      // Cargar header y footer
-      document.addEventListener("DOMContentLoaded", () => {
-        loadHTML("header", "includes/header.html");
-        loadHTML("footer", "includes/footer.html");
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

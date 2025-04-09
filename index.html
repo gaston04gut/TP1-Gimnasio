@@ -5,19 +5,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body data-tema="claro">
     <header>
       <div id="header"></div>
     </header>
 
     <section id="hero">
       <div class="video-container">
-        <video
-          muted
-          loop
-          autoplay
-          src="video/gymvideo.mp4"
-        ></video>
+        <video muted loop autoplay src="video/gymvideo.mp4"></video>
 
         <div class="text">
           <h1>SUMATE CON LOS MEJORES</h1>
@@ -38,7 +33,9 @@
               quia, incidunt, temporibus quibusdam fugiat ducimus! Nisi
               obcaecati necessitatibus, suscipit alias fugiat repellat!
             </p>
-            <button>+ info</button>
+            <form action="clases.html">
+              <button type="submit">+ info</button>
+            </form>
           </div>
 
           <div class="card-content">
@@ -49,7 +46,9 @@
               quia, incidunt, temporibus quibusdam fugiat ducimus! Nisi
               obcaecati necessitatibus, suscipit alias fugiat repellat!
             </p>
-            <button>+ info</button>
+            <form action="clases.html">
+              <button type="submit">+ info</button>
+            </form>
           </div>
 
           <div class="card-content">
@@ -60,12 +59,14 @@
               quia, incidunt, temporibus quibusdam fugiat ducimus! Nisi
               obcaecati necessitatibus, suscipit alias fugiat repellat!
             </p>
-            <button>+ info</button>
+            <form action="clases.html">
+              <button type="submit">+ info</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
-
+ 
     <section id="contador">
       <div class="contador-contenido">
         <span class="numero-animado" data-valor="500">+</span
@@ -122,15 +123,32 @@
       <form id="form-contacto" action="#modal-confirmacion" novalidate>
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="email">Correo Electrónico</label>
-          <input type="email" id="email" name="email" placeholder="Tu correo" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Tu correo"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Tu mensaje"
+            required
+          ></textarea>
         </div>
         <button type="submit" id="btn-enviar">
           Enviar
@@ -150,24 +168,7 @@
     <footer>
       <div id="footer"></div>
     </footer>
-    <script>
-      // Función para cargar contenido HTML en un elemento
-      async function loadHTML(elementId, filePath) {
-        try {
-          const response = await fetch(filePath);
-          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
-          const data = await response.text();
-          document.getElementById(elementId).innerHTML = data;
-        } catch (error) {
-          console.error(error);
-        }
-      }
-
-      // Cargar header y footer
-      document.addEventListener("DOMContentLoaded", () => {
-        loadHTML("header", "includes/header.html");
-        loadHTML("footer", "includes/footer.html");
-      });
-    </script>
+    
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/entrenadores.css" />
   </head>
-  <body>
+  <body data-tema="claro">
     <header>
       <div id="header"></div>
     </header>
@@ -41,11 +41,11 @@
                 </div>
               </div>
               <div class="rating">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
               </div>
             </div>
           </div>
@@ -79,11 +79,11 @@
                 </div>
               </div>
               <div class="rating">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella vacia">★</span>
+                <span class="estrella vacia">★</span>
               </div>
             </div>
           </div>
@@ -117,11 +117,11 @@
                 </div>
               </div>
               <div class="rating">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella llena">★</span>
+                <span class="estrella vacia">★</span>
               </div>
             </div>
           </div>
@@ -132,24 +132,6 @@
     <footer>
       <div id="footer"></div>
     </footer>
-    <script>
-      // Función para cargar contenido HTML en un elemento
-      async function loadHTML(elementId, filePath) {
-        try {
-          const response = await fetch(filePath);
-          if (!response.ok) throw new Error(`Error al cargar ${filePath}`);
-          const data = await response.text();
-          document.getElementById(elementId).innerHTML = data;
-        } catch (error) {
-          console.error(error);
-        }
-      }
-
-      // Cargar header y footer
-      document.addEventListener("DOMContentLoaded", () => {
-        loadHTML("header", "includes/header.html");
-        loadHTML("footer", "includes/footer.html");
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

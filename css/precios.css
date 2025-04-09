@@ -1,7 +1,19 @@
+/* Variables para el tema oscuro */
+[data-tema="oscuro"] {
+  --color-fondo: #1e1e1e; /* Fondo general */
+  --color-texto: #e0e0e0; /* Texto claro */
+  --color-primario: #bb86fc; /* Color principal */
+  --color-secundario: #2a2a2a; /* Fondo secundario */
+  --color-borde: #444; /* Bordes */
+  --color-hover: #5a2d82; /* Color al pasar el cursor */
+}
+
 #precios {
   margin-top: 60px;
   padding: 20px;
   text-align: center;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
 }
 
 .toggle-container {
@@ -47,30 +59,34 @@ label {
 
 .toggle-container label {
   padding: 10px 20px;
-  background-color: #f0f0f0;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .toggle-container input:checked + label {
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--color-primario);
+  color: var(--color-texto);
 }
 
 .plan {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  border: 1px solid var(--color-borde);
   border-radius: 8px;
   padding: 20px;
   width: 300px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .plan:hover {
   transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: var(--color-hover);
 }
 
 .plan h3 {
@@ -100,15 +116,17 @@ label {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: var(--color-primario);
+  color: var(--color-texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .plan button:hover {
-  background-color: rgb(117, 35, 194);
+  background-color: var(--color-hover);
 }
 
 .plan.destacado {
-  border: 2px solid blueviolet;
+  border: 2px solid var(--color-primario);
   transform: scale(1.05);
 }
 
@@ -123,8 +141,8 @@ label {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: black;
-  color: white;
+  background-color: var(--color-borde);
+  color: var(--color-texto);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.8rem;

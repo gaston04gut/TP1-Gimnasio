@@ -1,6 +1,29 @@
+button {
+  background-color: var(--color-primario);
+  color: var(--color-texto);
+  border: 2px solid var(--color-texto);
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+button:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}.card-content {
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.card-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
 #clases-destacadas {
   margin-top: 75px;
   padding: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .filtros input {
@@ -35,12 +58,24 @@
   background-color: blueviolet;
   color: white;
 }
-
+#yoga, #spinning, #boxing {
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
 .clases {
   display: grid;
   gap: 20px;
-  padding: 10px 30px;
+  padding: 0 30px;
+  justify-content: center;
+  height: auto; 
 }
+
+.clases h3{
+  font-size: 2.3em;
+  color: blueviolet;
+}
+
 .clases .clase p {
   margin: 0 !important;
   padding: 9px !important;
@@ -63,6 +98,7 @@
 .clases .clase:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
 #todos:checked ~ .clases .clase {
@@ -90,6 +126,27 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
+#clases-destacadas .masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 15px;
+  justify-items: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#clases-destacadas .masonry img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
 .masonry {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -110,8 +167,8 @@
   transform: scale(1.05);
 }
 
-#tarjetas-clases {
-  margin-top: 70px;
+.tarjetas-clases {
+  margin-top: 0;
   padding: 20px;
   text-align: center;
 }
@@ -121,7 +178,10 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   justify-content: center;
-  max-width: 1200px;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -131,11 +191,18 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 950px;
+  height: 200px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 .tarjeta img {
   width: 100%;
-  height: 200px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
@@ -193,7 +260,7 @@ tbody tr:hover {
   table,
   thead,
   th,
-  td{
+  td {
     display: block;
   }
 
@@ -211,7 +278,7 @@ tbody tr:hover {
     border-bottom: 1px solid #ddd;
   }
 
-  td:before{
+  td:before {
     content: attr(data-label);
     font-weight: bold;
     text-transform: uppercase;

@@ -1,11 +1,19 @@
-/* Variables para el tema oscuro */
+:root {
+  --color-fondo: #ffffff;
+  --color-texto: #000000;
+  --color-primario: blueviolet;
+  --color-secundario: #f0f0f0;
+  --color-borde: #ccc; /* Color para bordes y tooltips */
+  --color-hover: #5a2d82;
+}
+
 [data-tema="oscuro"] {
-  --color-fondo: #1e1e1e; /* Fondo general */
-  --color-texto: #e0e0e0; /* Texto claro */
-  --color-primario: #bb86fc; /* Color principal */
-  --color-secundario: #2a2a2a; /* Fondo secundario */
-  --color-borde: #444; /* Bordes */
-  --color-hover: #5a2d82; /* Color al pasar el cursor */
+  --color-fondo: #1e1e1e;
+  --color-texto: #e0e0e0;
+  --color-primario: #bb86fc;
+  --color-secundario: #2a2a2a;
+  --color-borde: #444; /* Color para bordes y tooltips */
+  --color-hover: #5a2d82;
 }
 
 #precios {
@@ -87,6 +95,7 @@ label {
   transform: translateY(-10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   background-color: var(--color-hover);
+  color: rgb(204, 204, 204);
 }
 
 .plan h3 {

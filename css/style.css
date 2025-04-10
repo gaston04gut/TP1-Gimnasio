@@ -555,7 +555,7 @@ textarea:invalid {
   font-size: 25px;
 }
 .listaRedes a:hover {
-  color: blueviolet;
+  color:var(--color-primario);
 }
 
 .mapa {
